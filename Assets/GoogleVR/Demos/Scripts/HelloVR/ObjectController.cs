@@ -116,6 +116,7 @@ namespace GoogleVR.HelloVR
             SetGazedAt(false);
         }
 
+
         private void Start()
         {
             startingPosition = transform.localPosition;
