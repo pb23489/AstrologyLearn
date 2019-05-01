@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StarManager : MonoBehaviour
 {
     public int counter = 0;
-    public GameObject[] stars = new GameObject [20];
-    public GameObject[] lines = new GameObject [19];
+    public GameObject[] stars = new GameObject [0];
+    public GameObject[] lines = new GameObject [0];
     public int max;
 
     public void Update()
@@ -18,7 +20,7 @@ public class StarManager : MonoBehaviour
             counter++;
         }
 
-        for (int check = counter+2; check < stars.Length-1; check++)
+        for (int check = counter+2; check < stars.Length; check++)
         {
             if (stars[counter].isStatic && stars[check].isStatic && !stars[counter+1].isStatic)
             {
@@ -29,7 +31,9 @@ public class StarManager : MonoBehaviour
 
         if (stars[max].isStatic)
         {
-            //load ui informational screen with next level button
+            //pop up UI Screen with continue button
+            
+            //SceneManager.LoadScene(0);
         }
     }
 }
