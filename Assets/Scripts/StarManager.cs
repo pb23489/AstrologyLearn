@@ -10,6 +10,8 @@ public class StarManager : MonoBehaviour
     public GameObject[] stars = new GameObject [0];
     public GameObject[] lines = new GameObject [0];
     public int max;
+    public Canvas canvas;
+    public bool canvasActive = false;
 
     public void Update()
     {
@@ -31,9 +33,8 @@ public class StarManager : MonoBehaviour
 
         if (stars[max].isStatic)
         {
-            //pop up UI Screen with continue button
+            canvasActive = !canvasActive;
             
-            //SceneManager.LoadScene(0);
         }
     }
 }
