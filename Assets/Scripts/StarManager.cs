@@ -6,35 +6,32 @@ using UnityEngine.UI;
 
 public class StarManager : MonoBehaviour
 {
-    public int counter = 0;
+    private int counter = 0;
+    private int max;
     public GameObject[] stars = new GameObject [0];
     public GameObject[] lines = new GameObject [0];
-    public int max;
-    public Canvas canvas;
-    public bool canvasActive = false;
 
     public void Update()
     {
-        if (stars[counter].isStatic && stars[counter + 1].isStatic)
+       max = stars.Length-1;
+        if (counter == max)
+        {
+            //display UI Screen
+        }
+        else if (stars[counter].isStatic && stars[counter + 1].isStatic)
         {
             lines[counter].SetActive(true);
-            stars[counter+1].SetActive(false);
+            stars[counter + 1].SetActive(false);
             counter++;
         }
 
-        for (int check = counter+2; check < stars.Length; check++)
+        for (int check = counter + 2; check < stars.Length; check++)
         {
-            if (stars[counter].isStatic && stars[check].isStatic && !stars[counter+1].isStatic)
+            if (stars[counter].isStatic && stars[check].isStatic && !stars[counter + 1].isStatic)
             {
                 //play wrong noise
                 stars[check].isStatic = false;
             }
-        }
-
-        if (stars[max].isStatic)
-        {
-            canvasActive = !canvasActive;
-            
         }
     }
 }
