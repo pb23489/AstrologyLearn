@@ -16,8 +16,9 @@ public class StarManager : MonoBehaviour
        max = stars.Length-1;
         if (counter == max)
         {
-            //display UI Screen
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
         else if (stars[counter].CompareTag("Clicked") && stars[counter + 1].CompareTag("Clicked"))
         {
             lines[counter].SetActive(true);
