@@ -18,7 +18,7 @@ public class StarManager : MonoBehaviour
         {
             //display UI Screen
         }
-        else if (stars[counter].isStatic && stars[counter + 1].isStatic)
+        else if (stars[counter].CompareTag("Clicked") && stars[counter + 1].CompareTag("Clicked"))
         {
             lines[counter].SetActive(true);
             stars[counter + 1].SetActive(false);
@@ -27,10 +27,10 @@ public class StarManager : MonoBehaviour
 
         for (int check = counter + 2; check < stars.Length; check++)
         {
-            if (stars[counter].isStatic && stars[check].isStatic && !stars[counter + 1].isStatic)
+            if (stars[counter].CompareTag("Clicked") && stars[check].CompareTag("Clicked") && !stars[counter + 1].CompareTag("Clicked"))
             {
                 //play wrong noise
-                stars[check].isStatic = false;
+                stars[check].tag = "Untagged";
             }
         }
     }
