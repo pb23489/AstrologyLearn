@@ -23,6 +23,7 @@ public class StarManager : MonoBehaviour
         {
             lines[counter].SetActive(true);
             stars[counter + 1].SetActive(false);
+            Instantiate(Resources.Load("Correct SFX"));
             counter++;
         }
 
@@ -30,7 +31,7 @@ public class StarManager : MonoBehaviour
         {
             if (stars[counter].CompareTag("Clicked") && stars[check].CompareTag("Clicked") && !stars[counter + 1].CompareTag("Clicked"))
             {
-                //play wrong noise
+                Instantiate(Resources.Load("Error SFX"));
                 stars[check].tag = "Untagged";
             }
         }
