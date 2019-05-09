@@ -10,6 +10,7 @@ public class StarManager : MonoBehaviour
     private int max;
     public GameObject[] stars = new GameObject [0];
     public GameObject[] lines = new GameObject [0];
+  // public GameObject[] particleStars = new GameObject[0]; particle holder
     public GameObject endScreen;
     public GameObject continueButton;
 
@@ -18,9 +19,12 @@ public class StarManager : MonoBehaviour
        max = stars.Length-1;
         if (counter == max)
         {
+            //play UI pop up sound/win sound
             endScreen.SetActive(true);
             if (continueButton.CompareTag("Clicked"))
             {
+                Instantiate(Resources.Load("Continue SFX"));
+                //need delay here
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
@@ -29,6 +33,7 @@ public class StarManager : MonoBehaviour
         {
             lines[counter].SetActive(true);
             stars[counter + 1].SetActive(false);
+            //particleStars[counter].SetActive(true); sets particle star true
             Instantiate(Resources.Load("Correct SFX"));
             counter++;
         }
