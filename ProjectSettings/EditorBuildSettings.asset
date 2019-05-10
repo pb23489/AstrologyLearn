@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Levels/Start Screen.unity
     guid: 188278e86648e6f438a3e20e32c27b3e
   - enabled: 1
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level 3(Leo).unity
     guid: f1140e7d2cdcb3f4fafabf1b995f6ec5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Levels/Credits.unity
     guid: b1d4a5c94d1087547bb5fc757e7c315c
   m_configObjects: {}
