@@ -31,7 +31,7 @@ public class StarManager : MonoBehaviour
         {
             lines[counter].SetActive(true);
             stars[counter + 1].SetActive(false);
-            particleStars[counter+1].SetActive(true)  ;
+            particleStars[counter+1].SetActive(true);
             Instantiate(Resources.Load("Correct SFX"));
             counter++;
         }
@@ -44,10 +44,5 @@ public class StarManager : MonoBehaviour
                 stars[check].tag = "Untagged";
             }
         }
-    }
-
-    public void playContinueSFX()
-    {
-        Instantiate(Resources.Load("Continue SFX"));
     }
 }
