@@ -10,7 +10,7 @@ public class StarManager : MonoBehaviour
     private int max;
     public GameObject[] stars = new GameObject [0];
     public GameObject[] lines = new GameObject [0];
-  // public GameObject[] particleStars = new GameObject[0]; particle holder
+    public GameObject[] particleStars = new GameObject[0];
     public GameObject endScreen;
     public GameObject continueButton;
 
@@ -31,7 +31,7 @@ public class StarManager : MonoBehaviour
         {
             lines[counter].SetActive(true);
             stars[counter + 1].SetActive(false);
-            //particleStars[counter].SetActive(true); sets particle star true
+            particleStars[counter+1].SetActive(true)  ;
             Instantiate(Resources.Load("Correct SFX"));
             counter++;
         }
