@@ -19,11 +19,9 @@ public class StarManager : MonoBehaviour
        max = stars.Length-1;
         if (counter == max)
         {
-            //play UI pop up sound/win sound
             endScreen.SetActive(true);
             if (continueButton.CompareTag("Clicked"))
             {
-                Instantiate(Resources.Load("Continue SFX"));
                 //need delay here
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
@@ -46,5 +44,10 @@ public class StarManager : MonoBehaviour
                 stars[check].tag = "Untagged";
             }
         }
+    }
+
+    public void playContinueSFX()
+    {
+        Instantiate(Resources.Load("Continue SFX"));
     }
 }
